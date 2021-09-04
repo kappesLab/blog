@@ -12,7 +12,7 @@ namespace SimpleThread
         static void Main(string[] args)
         {
             Thread th = new Thread(SayHello);
-            th.Name = "Hallo";
+            th.Name = "Hello";
             th.Priority = ThreadPriority.Normal;
             th.Start();
 
