@@ -11,8 +11,8 @@ namespace SimpleThread
     {
         static void Main(string[] args)
         {
-            Thread th = new Thread(SayHello);
-            th.Name = "Hello";
+            Thread th = new Thread(DoStuff);
+            th.Name = "ThreadStuff";
             th.Priority = ThreadPriority.Normal;
             th.Start();
 
@@ -20,9 +20,9 @@ namespace SimpleThread
             Console.ReadLine();
         }
 
-        private static void SayHello()
+        private static void DoStuff()
         {
-            Console.WriteLine("Hello World");
+            Console.WriteLine("Ciao mondo!");
         }
 
     }

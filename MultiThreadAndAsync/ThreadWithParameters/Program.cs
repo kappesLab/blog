@@ -11,8 +11,8 @@ namespace ThreadWith_Parameters
     {
         static void Main(string[] args)
         {
-            Thread th = new Thread(SayHello);
-            th.Name = "Hello";
+            Thread th = new Thread(DoStuff);
+            th.Name = "ThreadStuff";
             th.Priority = ThreadPriority.Normal;
             th.Start("Davide");
 
@@ -20,9 +20,9 @@ namespace ThreadWith_Parameters
             Console.ReadLine();
         }
 
-        private static void SayHello(object o)
+        private static void DoStuff(object o)
         {
-            Console.WriteLine($"Hello World {o}");
+            Console.WriteLine($"Ciao mondo da {o}!");
         }
     }
 }
