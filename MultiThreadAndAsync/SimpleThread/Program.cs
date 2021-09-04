@@ -22,7 +22,7 @@ namespace SimpleThread
 
         private static void SayHello()
         {
-            Console.WriteLine("Hello Word");
+            Console.WriteLine("Hello World");
         }
 
     }
