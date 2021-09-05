@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleThread", "SimpleThrea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadWithParameters", "ThreadWithParameters\ThreadWithParameters.csproj", "{F2091166-6F75-481B-901D-128AED31207B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CancelThread", "CancelThread\CancelThread.csproj", "{02AA3395-9ADD-4E54-BFD4-35BED452BB08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F2091166-6F75-481B-901D-128AED31207B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2091166-6F75-481B-901D-128AED31207B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2091166-6F75-481B-901D-128AED31207B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02AA3395-9ADD-4E54-BFD4-35BED452BB08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02AA3395-9ADD-4E54-BFD4-35BED452BB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02AA3395-9ADD-4E54-BFD4-35BED452BB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02AA3395-9ADD-4E54-BFD4-35BED452BB08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

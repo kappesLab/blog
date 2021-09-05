@@ -16,7 +16,7 @@ namespace SimpleThread
             th.Priority = ThreadPriority.Normal;
             th.Start();
 
-            // Press RETURN to exit
+            // Press ENTER to exit
             Console.ReadLine();
         }
 

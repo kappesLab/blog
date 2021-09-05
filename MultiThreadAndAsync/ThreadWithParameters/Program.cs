@@ -16,7 +16,7 @@ namespace ThreadWith_Parameters
             th.Priority = ThreadPriority.Normal;
             th.Start("Davide");
 
-            // Press RETURN to exit
+            // Press ENTER to exit
             Console.ReadLine();
         }
 
