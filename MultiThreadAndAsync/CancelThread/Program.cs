@@ -33,7 +33,7 @@ namespace CancelThread
         {
             while(!isThreadCancel)
             {
-                Console.WriteLine("Io sono il 'ThreadStuff'");
+                Console.WriteLine("Io sono nel 'ThreadStuff'");
                 Thread.Sleep(1000);
             }
         }
