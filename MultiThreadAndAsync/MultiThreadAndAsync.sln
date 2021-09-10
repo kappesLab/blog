@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadWithParameters", "Thr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CancelThread", "CancelThread\CancelThread.csproj", "{02AA3395-9ADD-4E54-BFD4-35BED452BB08}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadPoolWithQueue", "ThreadPoolWithQueue\ThreadPoolWithQueue.csproj", "{2507C788-4E89-42B0-AFF8-563A8C9F1E30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{02AA3395-9ADD-4E54-BFD4-35BED452BB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02AA3395-9ADD-4E54-BFD4-35BED452BB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02AA3395-9ADD-4E54-BFD4-35BED452BB08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2507C788-4E89-42B0-AFF8-563A8C9F1E30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2507C788-4E89-42B0-AFF8-563A8C9F1E30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2507C788-4E89-42B0-AFF8-563A8C9F1E30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2507C788-4E89-42B0-AFF8-563A8C9F1E30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

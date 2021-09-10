@@ -18,7 +18,7 @@ namespace CancelThread
             th.Priority = ThreadPriority.Normal;
             th.Start();
 
-            Console.WriteLine("Premi ENTER per blocaare 'ThreadStuff'");
+            Console.WriteLine("Premi ENTER per bloccare 'ThreadStuff'");
             Console.ReadLine();
             isThreadCancel = true;
             th.Join();
