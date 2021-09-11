@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 
-
-namespace ThreadPoolWithQueue
+namespace ThreadPoolWithTask
 {
+
     class Program
     {
         static void Main(string[] args)
         {
-            ThreadPool.QueueUserWorkItem(DoStuff, "Davide");
+            Task task = new Task(DoStuff, "Davide");
+            task.Start();
+            //task.Wait();
+
             Console.WriteLine("Io sono nel thread pricipale.");
 
             // Press ENTER to exit
@@ -19,10 +23,11 @@ namespace ThreadPoolWithQueue
         }
 
 
-        private static void DoStuff(object o)
+        private static void DoStuff(object name)
         {
-            Console.WriteLine($"Ciao {o}, Io sono in un thread del 'ThreadPool'");
             Thread.Sleep(500);
+            Console.WriteLine($"Ciao {name}, Io sono in un thread del 'ThreadPool'");
         }
+
     }
 }
