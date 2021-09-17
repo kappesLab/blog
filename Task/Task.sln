@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCreation", "TaskCreatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCreationLambda", "TaskCreationLambda\TaskCreationLambda.csproj", "{58BA0DEA-7F21-4EAF-A2F9-DFC77C1BC033}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWait", "TaskWait\TaskWait.csproj", "{7C053D6D-5A86-4148-88AE-D3BC4F34D34C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{58BA0DEA-7F21-4EAF-A2F9-DFC77C1BC033}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58BA0DEA-7F21-4EAF-A2F9-DFC77C1BC033}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58BA0DEA-7F21-4EAF-A2F9-DFC77C1BC033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C053D6D-5A86-4148-88AE-D3BC4F34D34C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C053D6D-5A86-4148-88AE-D3BC4F34D34C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C053D6D-5A86-4148-88AE-D3BC4F34D34C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C053D6D-5A86-4148-88AE-D3BC4F34D34C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
