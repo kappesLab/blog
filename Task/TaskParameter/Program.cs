@@ -12,7 +12,8 @@ namespace TaskParameter
         {
             for (int i = 0; i < 10; i++)
             {
-                Task.Factory.StartNew(DoStuff, i);
+                object arg = i;
+                Task.Factory.StartNew(DoStuff, arg);
             }
 
             // Press ENTER to exit
