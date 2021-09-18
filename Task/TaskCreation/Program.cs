@@ -24,7 +24,7 @@ namespace TaskCreation
         {
             // Simulates a long-term operation
             Thread.Sleep(500);
-            Console.WriteLine("Ciao mondo! Io sono il lavoro del task.");            
+            Console.WriteLine("Io sono il lavoro del task.");            
         }
     }
 }

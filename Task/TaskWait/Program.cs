@@ -24,7 +24,7 @@ namespace TaskWait
         {
             // Simulates a long-term operation
             Thread.Sleep(1000);
-            Console.WriteLine("Ciao mondo! Io sono il lavoro del task.");
+            Console.WriteLine("Io sono il lavoro del task.");
         }
     }
 }
