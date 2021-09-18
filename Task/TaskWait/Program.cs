@@ -11,7 +11,7 @@ namespace TaskWait
     {
         static void Main(string[] args)
         {
-            Task output = Task.Factory.StartNew(DolongOperation);
+            Task output = Task.Factory.StartNew(DoLongOperation);
             output.Wait();
 
             Console.WriteLine($"output.Status = {output.Status}");
@@ -20,7 +20,7 @@ namespace TaskWait
             Console.ReadLine();
         }
 
-        private static void DolongOperation()
+        private static void DoLongOperation()
         {
             // Simulates a long-term operation
             Thread.Sleep(1000);
