@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskMultipleExceptions", "T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWaitWithTimeout", "TaskWaitWithTimeout\TaskWaitWithTimeout.csproj", "{921B7DBF-56FC-4C69-BF01-0F15CFDDEA54}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCancellationToken", "TaskCancellationToken\TaskCancellationToken.csproj", "{FCF95716-B77D-453F-AE82-129D901284F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCancellationTokenException", "TaskCancellationTokenException\TaskCancellationTokenException.csproj", "{360F9266-6ADD-4DD3-B3C9-954A0C74967D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{921B7DBF-56FC-4C69-BF01-0F15CFDDEA54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{921B7DBF-56FC-4C69-BF01-0F15CFDDEA54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{921B7DBF-56FC-4C69-BF01-0F15CFDDEA54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCF95716-B77D-453F-AE82-129D901284F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCF95716-B77D-453F-AE82-129D901284F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCF95716-B77D-453F-AE82-129D901284F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCF95716-B77D-453F-AE82-129D901284F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{360F9266-6ADD-4DD3-B3C9-954A0C74967D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{360F9266-6ADD-4DD3-B3C9-954A0C74967D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{360F9266-6ADD-4DD3-B3C9-954A0C74967D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{360F9266-6ADD-4DD3-B3C9-954A0C74967D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
