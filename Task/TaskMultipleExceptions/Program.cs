@@ -48,6 +48,7 @@ namespace TaskMultipleExceptions
 
         private static void DoLongOperation2()
         {
+            Thread.Sleep(1000);
             Console.WriteLine("Io sono in DoLongOperation2");
         }
 
