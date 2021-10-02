@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCancellationToken", "Ta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCancellationTokenException", "TaskCancellationTokenException\TaskCancellationTokenException.csproj", "{360F9266-6ADD-4DD3-B3C9-954A0C74967D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskContinueWith", "TaskContinueWith\TaskContinueWith.csproj", "{19001009-8878-4CA3-A025-36E9C5C9B0C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{360F9266-6ADD-4DD3-B3C9-954A0C74967D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{360F9266-6ADD-4DD3-B3C9-954A0C74967D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{360F9266-6ADD-4DD3-B3C9-954A0C74967D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19001009-8878-4CA3-A025-36E9C5C9B0C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19001009-8878-4CA3-A025-36E9C5C9B0C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19001009-8878-4CA3-A025-36E9C5C9B0C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19001009-8878-4CA3-A025-36E9C5C9B0C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
