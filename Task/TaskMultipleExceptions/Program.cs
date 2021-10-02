@@ -12,6 +12,24 @@ namespace TaskMultipleExceptions
 {
     class Program
     {
+        private static void DoLongOperation1()
+        {
+            File.ReadAllText("Pippo.txt");
+            Console.WriteLine("Io sono in DoLongOperation1");
+        }
+
+        private static void DoLongOperation2()
+        {
+            Thread.Sleep(1000);
+            Console.WriteLine("Io sono in DoLongOperation2");
+        }
+
+        private static void DoLongOperation3()
+        {
+            Console.WriteLine("Io sono in DoLongOperation3");
+            throw new CustomException("Questa eccezzione è generata in DoLongOperation3!"); ;
+        }
+
         static void Main(string[] args)
         {
             Task task1 = Task.Factory.StartNew(DoLongOperation1);
@@ -37,29 +55,6 @@ namespace TaskMultipleExceptions
             // Press ENTER to exit
             Console.ReadLine();
         }
-
-
-        private static void DoLongOperation1()
-        {
-            File.ReadAllText("Pippo.txt");
-            Console.WriteLine("Io sono in DoLongOperation1");
-        }
-
-
-        private static void DoLongOperation2()
-        {
-            Thread.Sleep(1000);
-            Console.WriteLine("Io sono in DoLongOperation2");
-        }
-
-
-        private static void DoLongOperation3()
-        {
-            Console.WriteLine("Io sono in DoLongOperation3");
-            throw new CustomException("Questa eccezzione è generata in DoLongOperation3!"); ;
-        }
-
-
         public class CustomException : Exception
         {
             public CustomException(String message) : base(message)
