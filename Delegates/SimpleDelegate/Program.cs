@@ -29,7 +29,7 @@ namespace SimpleDelegate
             // Method association
             handler = Calculation2;
 
-            // Execution of the "Calculation1" method through the delegate
+            // Execution of the "Calculation2" method through the delegate
             Console.WriteLine($"{handler(x, y)} = Calculation2({x}, {y})");
 
             // Press ENTER to exit
