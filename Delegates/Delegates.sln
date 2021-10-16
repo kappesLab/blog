@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDelegate", "SimpleDel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdaDelegate", "LambdaDelegate\LambdaDelegate.csproj", "{DE0CD0C3-FAE0-490C-8298-56F4096B8985}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnonymousMethodDelegate", "AnonymousMethodDelegate\AnonymousMethodDelegate.csproj", "{EBB82E44-8DF4-4E2E-97BD-670945F86E81}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{DE0CD0C3-FAE0-490C-8298-56F4096B8985}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE0CD0C3-FAE0-490C-8298-56F4096B8985}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE0CD0C3-FAE0-490C-8298-56F4096B8985}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBB82E44-8DF4-4E2E-97BD-670945F86E81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBB82E44-8DF4-4E2E-97BD-670945F86E81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBB82E44-8DF4-4E2E-97BD-670945F86E81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBB82E44-8DF4-4E2E-97BD-670945F86E81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
