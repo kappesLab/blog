@@ -28,7 +28,7 @@ namespace AnonymousMethodDelegate
                                                                                                                                                                                                                                             
             handler(a);
 
-            Console.WriteLine($"Valori finale.");
+            Console.WriteLine($"Valori finali.");
             Console.WriteLine($"a = {a} - n = {n}");
 
             // Press ENTER to exit
