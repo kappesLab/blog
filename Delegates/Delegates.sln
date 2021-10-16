@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDelegate", "SimpleDelegate\SimpleDelegate.csproj", "{D7BCC282-24D2-476C-9990-0D044A72831C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdaDelegate", "LambdaDelegate\LambdaDelegate.csproj", "{DE0CD0C3-FAE0-490C-8298-56F4096B8985}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D7BCC282-24D2-476C-9990-0D044A72831C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7BCC282-24D2-476C-9990-0D044A72831C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7BCC282-24D2-476C-9990-0D044A72831C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE0CD0C3-FAE0-490C-8298-56F4096B8985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE0CD0C3-FAE0-490C-8298-56F4096B8985}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE0CD0C3-FAE0-490C-8298-56F4096B8985}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE0CD0C3-FAE0-490C-8298-56F4096B8985}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
