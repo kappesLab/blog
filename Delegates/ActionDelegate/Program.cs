@@ -16,6 +16,17 @@ namespace ActionDelegate
             Action<string> handler2 = Tanks;
             handler2("Davide");
 
+            // Anonymous method
+            Action<string> handler3 = delegate(string s)
+            {
+                Console.WriteLine($"Buona notte, {s}");
+            };
+            handler3("Marco");
+
+            // Lambda expressions
+            Action handler4 = () => Console.WriteLine("Oggi c'è il sole.");
+            handler4();
+
             // Press ENTER to exit
             Console.ReadLine();
         }
