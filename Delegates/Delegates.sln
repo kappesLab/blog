@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnonymousMethodDelegate", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MulticastDelegate", "MulticastDelegate\MulticastDelegate.csproj", "{76AE3C18-514D-4AFF-BB4F-50BE3C884773}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActionDelegate", "ActionDelegate\ActionDelegate.csproj", "{F8377835-4A95-4797-83FF-D441FBC7D3C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{76AE3C18-514D-4AFF-BB4F-50BE3C884773}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76AE3C18-514D-4AFF-BB4F-50BE3C884773}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76AE3C18-514D-4AFF-BB4F-50BE3C884773}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8377835-4A95-4797-83FF-D441FBC7D3C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8377835-4A95-4797-83FF-D441FBC7D3C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8377835-4A95-4797-83FF-D441FBC7D3C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8377835-4A95-4797-83FF-D441FBC7D3C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
