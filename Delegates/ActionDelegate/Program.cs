@@ -10,8 +10,11 @@ namespace ActionDelegate
     {
         static void Main(string[] args)
         {
-            Action handler = SayHello;
-            handler();
+            Action handler1 = SayHello;
+            handler1();
+
+            Action<string> handler2 = Tanks;
+            handler2("Davide");
 
             // Press ENTER to exit
             Console.ReadLine();
@@ -19,12 +22,12 @@ namespace ActionDelegate
 
         public static void SayHello()
         {
-            Console.WriteLine($"Ciao");
+            Console.WriteLine("Ciao");
         }
 
-        public static void Tanks()
+        public static void Tanks(string name)
         {
-            Console.WriteLine($"Grazie");
+            Console.WriteLine($"Grazie, {name}");
         }
 
     }
