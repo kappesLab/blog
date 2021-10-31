@@ -35,6 +35,7 @@ namespace AsyncDemoApp
                 "https://www.codeproject.com",
                 "https://www.nytimes.com",
                 "https://www.arduino.cc",
+                "https://en.wikipedia.org/wiki/.net",
                 "https://www.nationalgeographic.com",
                 "https://www.libreoffice.org",
                 "https://edition.cnn.com/"
