@@ -26,43 +26,6 @@ namespace AsyncDemoApp
             InitializeComponent();
         }
 
-
-        private void SyncExecute_Click(object sender, RoutedEventArgs e)
-        {
-            var watch = System.Diagnostics.Stopwatch.StartNew();
-            
-            Download();
-
-            watch.Stop();
-            var elapsedMs = watch.ElapsedMilliseconds;
-
-            this.ResultTextBlock.Text += $"{ Environment.NewLine }Tempo di esecuzione totale: { elapsedMs } (ms).";
-        }
-
-        private async void AsyncExecute_Click(object sender, RoutedEventArgs e)
-        {
-            var watch = System.Diagnostics.Stopwatch.StartNew();
-
-            await DownloadAsync();
-
-            watch.Stop();
-            var elapsedMs = watch.ElapsedMilliseconds;
-
-            this.ResultTextBlock.Text += $"{ Environment.NewLine }Tempo di esecuzione totale: { elapsedMs } (ms).";
-        }
-
-        private async void AsyncParallelExecute_Click(object sender, RoutedEventArgs e)
-        {
-            var watch = System.Diagnostics.Stopwatch.StartNew();
-
-            await DownloadParallelAsync();
-
-            watch.Stop();
-            var elapsedMs = watch.ElapsedMilliseconds;
-
-            this.ResultTextBlock.Text += $"{ Environment.NewLine }Tempo di esecuzione totale: { elapsedMs } (ms).";
-        }
-
         private List<string> GetUrlWebSites()
         {
             List<string> result = new List<string>()
@@ -80,6 +43,11 @@ namespace AsyncDemoApp
             return result;
         }
 
+        private void ShowWebSiteInfoData(WebSiteInfoDataModel infoData)
+        {
+            this.ResultTextBlock.Text += $"{ infoData.Url }: { infoData.Text.Length } caratteri scaricati.{ Environment.NewLine }";
+        }
+
         private WebSiteInfoDataModel DownloadWebSite(string urlWebSite)
         {
             WebSiteInfoDataModel result = new WebSiteInfoDataModel();
@@ -91,9 +59,29 @@ namespace AsyncDemoApp
             return result;
         }
 
-        private void ShowWebSiteInfoData(WebSiteInfoDataModel infoData)
+        private async Task<WebSiteInfoDataModel> DownloadWebSiteAsync(string urlWebSite)
         {
-            this.ResultTextBlock.Text += $"{ infoData.Url }: { infoData.Text.Length } caratteri scaricati.{ Environment.NewLine }";
+            WebSiteInfoDataModel result = new WebSiteInfoDataModel();
+            WebClient client = new WebClient();
+
+            result.Url = urlWebSite;
+            result.Text = await client.DownloadStringTaskAsync(urlWebSite);
+
+            return result;
+        }
+
+        #region Download Sync
+
+        private void SyncExecute_Click(object sender, RoutedEventArgs e)
+        {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            
+            Download();
+
+            watch.Stop();
+            var elapsedMs = watch.ElapsedMilliseconds;
+
+            this.ResultTextBlock.Text += $"{ Environment.NewLine }Tempo di esecuzione totale: { elapsedMs } (ms).";
         }
 
         private void Download()
@@ -109,38 +97,107 @@ namespace AsyncDemoApp
             }
         }
 
+        #endregion
+
+        #region Download Async
+
+        private async void AsyncExecute_Click(object sender, RoutedEventArgs e)
+        {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+
+            await DownloadAsync();
+
+            watch.Stop();
+            var elapsedMs = watch.ElapsedMilliseconds;
+
+            this.ResultTextBlock.Text += $"{ Environment.NewLine }Tempo di esecuzione totale: { elapsedMs } (ms).";
+        }
+
         private async Task DownloadAsync()
         {
             List<string> sites = GetUrlWebSites();
 
             this.ResultTextBlock.Text = "";
 
-            foreach(string item in sites)
+            foreach (string item in sites)
             {
                 WebSiteInfoDataModel infoData = await Task.Run(() => DownloadWebSite(item));
                 ShowWebSiteInfoData(infoData);
             }
         }
 
-        private async Task DownloadParallelAsync()
+        #endregion
+
+        #region Download Parallel Async (1)
+
+        private async void AsyncParallelExecute_1_Click(object sender, RoutedEventArgs e)
+        {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+
+            await DownloadParallel_1_Async();
+
+            watch.Stop();
+            var elapsedMs = watch.ElapsedMilliseconds;
+
+            this.ResultTextBlock.Text += $"{ Environment.NewLine }Tempo di esecuzione totale: { elapsedMs } (ms).";
+        }
+
+        private async Task DownloadParallel_1_Async()
         {
             List<string> sites = GetUrlWebSites();
             List<Task<WebSiteInfoDataModel>> downloadTasks = new List<Task<WebSiteInfoDataModel>>();
-           
+
             this.ResultTextBlock.Text = "";
 
-            foreach(string item in sites)
+            foreach (string item in sites)
             {
                 downloadTasks.Add(Task.Run(() => DownloadWebSite(item)));
             }
 
             WebSiteInfoDataModel[] results = await Task.WhenAll(downloadTasks);
 
-            foreach(WebSiteInfoDataModel item in results)
+            foreach (WebSiteInfoDataModel item in results)
             {
                 ShowWebSiteInfoData(item);
             }
         }
+
+        #endregion
+
+        #region  Download Parallel Async (2)
+        private async void AsyncParallelExecute_2_Click(object sender, RoutedEventArgs e)
+        {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+
+            await DownloadParallel_2_Async();
+
+            watch.Stop();
+            var elapsedMs = watch.ElapsedMilliseconds;
+
+            this.ResultTextBlock.Text += $"{ Environment.NewLine }Tempo di esecuzione totale: { elapsedMs } (ms).";
+        }
+
+        private async Task DownloadParallel_2_Async()
+        {
+            List<string> sites = GetUrlWebSites();
+            List<Task<WebSiteInfoDataModel>> downloadTasks = new List<Task<WebSiteInfoDataModel>>();
+
+            this.ResultTextBlock.Text = "";
+
+            foreach (string item in sites)
+            {
+                downloadTasks.Add(DownloadWebSiteAsync(item));
+            }
+
+            WebSiteInfoDataModel[] results = await Task.WhenAll(downloadTasks);
+
+            foreach (WebSiteInfoDataModel item in results)
+            {
+                ShowWebSiteInfoData(item);
+            }
+        }
+
+        #endregion
 
     }
 }
