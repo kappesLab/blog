@@ -14,41 +14,61 @@
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-          
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
 
             <Button x:Name="SyncExecute" 
-                    Grid.Row="0" 
+                    Grid.Row="0" Grid.Column="0"
                     Margin="10" Padding="0 10" 
                     Content="Esecuzione Normale (Sincrona)" 
                     Click="SyncExecute_Click"  />
-            
+
+            <Button x:Name="SyncParallelExecute" 
+                    Grid.Row="0" Grid.Column="1"
+                    Margin="10" Padding="0 10" 
+                    FontWeight="Bold"
+                    Content="Esecuzione Parallela (Sincrona)" 
+                    Click="SyncParallelExecute_Click"  />
+
             <Button x:Name="AsyncExecute" 
-                    Grid.Row="1" 
+                    Grid.Row="2" Grid.ColumnSpan="2"
                     Margin="10" Padding="0 10"
+                    FontWeight="Bold"
                     Content="Esecuzione Asincrona"
                     Click="AsyncExecute_Click" />
 
-            <Button x:Name="AsyncParallelExecute" 
-                    Grid.Row="2" 
-                    Margin="10" Padding="0 10"
-                    Content="Esecuzione Asincrona Parallela"
-                    Click="AsyncParallelExecute_Click" />
-          
-
-            <Button x:Name="CancelOperation" 
+            <Button x:Name="AsyncParallelExecute_V1" 
                     Grid.Row="3" 
                     Margin="10" Padding="0 10"
+                    Content="Esecuzione Asincrona Parallela (1)"
+                    Click="AsyncParallelExecute_V1_Click" />
+
+            <Button x:Name="AsyncParallelExecute_V2" 
+                    Grid.Row="3" Grid.Column="2"
+                    Margin="10" Padding="0 10"
+                    FontWeight="Bold"
+                    Content="Esecuzione Asincrona Parallela (2)"
+                    Click="AsyncParallelExecute_V2_Click" />
+
+            <Button x:Name="CancelOperation" 
+                    Grid.Row="4" Grid.ColumnSpan="2"
+                    Margin="10" Padding="0 10"
+                    FontWeight="Bold"
                     Content="Interrompi il Download"
                     Click="CancelOperation_Click" />
 
             <ProgressBar x:Name="DownloadProgress"
-                         Grid.Row="4" 
+                         Grid.Row="5" Grid.ColumnSpan="2"
                          Margin="10" Height="30"/>
 
-            <Border Grid.Row="5" 
+            <Border Grid.Row="6" Grid.ColumnSpan="2"
                     BorderThickness="1" BorderBrush="Black" 
                     Margin="10" Padding="5">
                 <TextBlock x:Name="ResultTextBlock"/>

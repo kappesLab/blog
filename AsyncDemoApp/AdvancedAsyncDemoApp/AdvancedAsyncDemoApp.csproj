@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DemoAppMethods.cs" />
+    <Compile Include="ProgressReportModel.cs" />
     <Compile Include="WebSiteInfoDataModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
