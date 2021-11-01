@@ -137,7 +137,6 @@ namespace AdvancedAsyncDemoApp
             ShowResults(e.WebSitesDownloaded);
         }
 
-
         private void ShowResults(List<WebSiteInfoDataModel> results)
         {
             this.ResultTextBlock.Text = "";
