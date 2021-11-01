@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AsyncDemoApp
@@ -41,20 +42,40 @@ namespace AsyncDemoApp
             return results;
         }
 
-        public static async Task<List<WebSiteInfoDataModel>> DownloadAsync()
+        public static List<WebSiteInfoDataModel> DownloadParallel()
         {
             List<string> sites = GetUrlWebSites();
             List<WebSiteInfoDataModel> results = new List<WebSiteInfoDataModel>();
+
+            Parallel.ForEach<string>(sites, (item) =>
+            {
+                WebSiteInfoDataModel infoData = DownloadWebSite(item);
+                results.Add(infoData);
+            });
+
+            return results;
+        }
+
+        public static async Task<List<WebSiteInfoDataModel>> DownloadAsync(IProgress<ProgressReportModel>progress, CancellationToken cancellationToken)
+        {
+            List<string> sites = GetUrlWebSites();
+            List<WebSiteInfoDataModel> results = new List<WebSiteInfoDataModel>();
+            ProgressReportModel report = new ProgressReportModel();
 
             foreach (string item in sites)
             {
                 WebSiteInfoDataModel infoData = await DownloadWebSiteAsync(item);
                 results.Add(infoData);
+
+                cancellationToken.ThrowIfCancellationRequested();
+
+                report.WebSitesDownloaded = results;
+                report.PercentageCompleted = (results.Count * 100) / sites.Count;
+                progress.Report(report);
             }
 
             return results;
         }
-
 
         public static async Task<List<WebSiteInfoDataModel>> DownloadParallelAsync()
         {
@@ -66,9 +87,36 @@ namespace AsyncDemoApp
                 downloadTasks.Add(DownloadWebSiteAsync(item));
             }
 
-            WebSiteInfoDataModel[] result = await Task.WhenAll(downloadTasks);
+            WebSiteInfoDataModel[] results = await Task.WhenAll(downloadTasks);
 
-            return new List<WebSiteInfoDataModel>(result);
+            return new List<WebSiteInfoDataModel>(results);
+        }
+
+        public static async Task<List<WebSiteInfoDataModel>> DownloadParallel_V2_Async(IProgress<ProgressReportModel>progress, CancellationToken cancellationToken)
+        {
+            List<string> sites = GetUrlWebSites();
+            List<WebSiteInfoDataModel> results = new List<WebSiteInfoDataModel>();
+            ProgressReportModel report = new ProgressReportModel();
+
+            // Use ParallelOptions instance to store the CancellationToken
+            ParallelOptions po = new ParallelOptions();
+            po.CancellationToken = cancellationToken;
+            po.MaxDegreeOfParallelism = System.Environment.ProcessorCount;
+
+            await Task.Run(() =>
+            {
+                Parallel.ForEach<string>(sites, po, (item) =>
+                {
+                    WebSiteInfoDataModel infoData = DownloadWebSite(item);
+                    results.Add(infoData);
+
+                    report.WebSitesDownloaded = results;
+                    report.PercentageCompleted = (results.Count * 100) / sites.Count;
+                    progress.Report(report);
+                });
+            }, cancellationToken);
+          
+            return new List<WebSiteInfoDataModel>(results);
         }
 
 
