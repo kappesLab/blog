@@ -24,38 +24,38 @@
             </Grid.ColumnDefinitions>
 
 
-            <Button x:Name="SyncExecute" 
+            <Button x:Name="ExecuteSync" 
                     Grid.Row="0" Grid.Column="0"
                     Margin="10" Padding="0 10" 
                     Content="Esecuzione Normale (Sincrona)" 
-                    Click="SyncExecute_Click"  />
+                    Click="ExecuteSync_Click"  />
 
-            <Button x:Name="SyncParallelExecute" 
+            <Button x:Name="ParallelExecuteSync" 
                     Grid.Row="0" Grid.Column="1"
                     Margin="10" Padding="0 10" 
                     FontWeight="Bold"
                     Content="Esecuzione Parallela (Sincrona)" 
-                    Click="SyncParallelExecute_Click"  />
+                    Click="ParallelExecuteSync_Click"  />
 
-            <Button x:Name="AsyncExecute" 
+            <Button x:Name="ExecuteAsync" 
                     Grid.Row="2" Grid.ColumnSpan="2"
                     Margin="10" Padding="0 10"
                     FontWeight="Bold"
                     Content="Esecuzione Asincrona"
-                    Click="AsyncExecute_Click" />
+                    Click="ExecuteAsync_Click" />
 
-            <Button x:Name="AsyncParallelExecute_V1" 
+            <Button x:Name="ParallelExecuteAsync_1" 
                     Grid.Row="3" 
                     Margin="10" Padding="0 10"
                     Content="Esecuzione Asincrona Parallela (1)"
-                    Click="AsyncParallelExecute_V1_Click" />
+                    Click="ParallelExecuteAsync_1_Click" />
 
-            <Button x:Name="AsyncParallelExecute_V2" 
+            <Button x:Name="ParallelExecuteAsync_2" 
                     Grid.Row="3" Grid.Column="2"
                     Margin="10" Padding="0 10"
                     FontWeight="Bold"
                     Content="Esecuzione Asincrona Parallela (2)"
-                    Click="AsyncParallelExecute_V2_Click" />
+                    Click="ParallelExecuteAsync_2_Click" />
 
             <Button x:Name="CancelOperation" 
                     Grid.Row="4" Grid.ColumnSpan="2"

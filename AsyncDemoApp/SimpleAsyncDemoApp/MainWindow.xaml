@@ -19,17 +19,17 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="SyncExecute" 
+            <Button x:Name="ExecuteSync" 
                     Grid.Row="0" Grid.ColumnSpan="2"
                     Margin="10" Padding="0 10" 
                     Content="Esecuzione Normale (Sincrona)" 
-                    Click="SyncExecute_Click"  />
+                    Click="ExecuteSync_Click"  />
 
-            <Button x:Name="AsyncExecute" 
+            <Button x:Name="ExecuteAsync" 
                     Grid.Row="1" Grid.ColumnSpan="2"
                     Margin="10" Padding="0 10"
                     Content="Esecuzione Asincrona"
-                    Click="AsyncExecute_Click" />
+                    Click="ExecuteAsync_Click" />
 
             <Border Grid.Row="3" Grid.ColumnSpan="2"
                     BorderThickness="1" BorderBrush="Black" 

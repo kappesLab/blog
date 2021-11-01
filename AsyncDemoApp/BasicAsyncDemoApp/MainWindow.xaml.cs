@@ -20,11 +20,11 @@ namespace BasicAsyncDemoApp
 
         #region Download Sync
 
-        private void SyncExecute_Click(object sender, RoutedEventArgs e)
+        private void ExecuteSync_Click(object sender, RoutedEventArgs e)
         {
             var watch = System.Diagnostics.Stopwatch.StartNew();
             
-            Download();
+            DownloadAllSites();
 
             watch.Stop();
             var elapsedMs = watch.ElapsedMilliseconds;
@@ -32,7 +32,7 @@ namespace BasicAsyncDemoApp
             this.ResultTextBlock.Text += $"{ Environment.NewLine }Tempo di esecuzione totale: { elapsedMs } (ms).";
         }
 
-        private void Download()
+        private void DownloadAllSites()
         {
             List<string> sites = DemoAppMethods.GetUrlWebSites();
 
@@ -47,13 +47,14 @@ namespace BasicAsyncDemoApp
 
         #endregion
 
-        #region Download Async
 
-        private async void AsyncExecute_Click(object sender, RoutedEventArgs e)
+        #region Download Async (1)
+
+        private async void ExecuteAsync_1_Click(object sender, RoutedEventArgs e)
         {
             var watch = System.Diagnostics.Stopwatch.StartNew();
 
-            await DownloadAsync();
+            await DownloadAllSites_1_Async();
 
             watch.Stop();
             var elapsedMs = watch.ElapsedMilliseconds;
@@ -61,7 +62,37 @@ namespace BasicAsyncDemoApp
             this.ResultTextBlock.Text += $"{ Environment.NewLine }Tempo di esecuzione totale: { elapsedMs } (ms).";
         }
 
-        private async Task DownloadAsync()
+        private async Task DownloadAllSites_1_Async()
+        {
+            List<string> sites = DemoAppMethods.GetUrlWebSites();
+
+            this.ResultTextBlock.Text = "";
+
+            foreach (string item in sites)
+            {
+                WebSiteInfoDataModel infoData = await DemoAppMethods.DownloadWebSiteAsync(item);
+                ShowWebSiteInfoData(infoData);
+            }
+        }
+
+        #endregion
+
+
+        #region Download Async (2)
+
+        private async void ExecuteAsync_2_Click(object sender, RoutedEventArgs e)
+        {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+
+            await DownloadAllSites_2_Async();
+
+            watch.Stop();
+            var elapsedMs = watch.ElapsedMilliseconds;
+
+            this.ResultTextBlock.Text += $"{ Environment.NewLine }Tempo di esecuzione totale: { elapsedMs } (ms).";
+        }
+
+        private async Task DownloadAllSites_2_Async()
         {
             List<string> sites = DemoAppMethods.GetUrlWebSites();
 
@@ -76,13 +107,14 @@ namespace BasicAsyncDemoApp
 
         #endregion
 
-        #region Download Parallel Async (1)
 
-        private async void AsyncParallelExecute_1_Click(object sender, RoutedEventArgs e)
+        #region Download Parallel Async 
+
+        private async void ParallelExecuteAsync_Click(object sender, RoutedEventArgs e)
         {
             var watch = System.Diagnostics.Stopwatch.StartNew();
 
-            await DownloadParallel_1_Async();
+            await DownloadParallel_Async();
 
             watch.Stop();
             var elapsedMs = watch.ElapsedMilliseconds;
@@ -90,42 +122,7 @@ namespace BasicAsyncDemoApp
             this.ResultTextBlock.Text += $"{ Environment.NewLine }Tempo di esecuzione totale: { elapsedMs } (ms).";
         }
 
-        private async Task DownloadParallel_1_Async()
-        {
-            List<string> sites = DemoAppMethods.GetUrlWebSites();
-            List<Task<WebSiteInfoDataModel>> downloadTasks = new List<Task<WebSiteInfoDataModel>>();
-
-            this.ResultTextBlock.Text = "";
-
-            foreach (string item in sites)
-            {
-                downloadTasks.Add(Task.Run(() => DemoAppMethods.DownloadWebSite(item)));
-            }
-
-            WebSiteInfoDataModel[] results = await Task.WhenAll(downloadTasks);
-
-            foreach (WebSiteInfoDataModel item in results)
-            {
-                ShowWebSiteInfoData(item);
-            }
-        }
-
-        #endregion
-
-        #region  Download Parallel Async (2)
-        private async void AsyncParallelExecute_2_Click(object sender, RoutedEventArgs e)
-        {
-            var watch = System.Diagnostics.Stopwatch.StartNew();
-
-            await DownloadParallel_2_Async();
-
-            watch.Stop();
-            var elapsedMs = watch.ElapsedMilliseconds;
-
-            this.ResultTextBlock.Text += $"{ Environment.NewLine }Tempo di esecuzione totale: { elapsedMs } (ms).";
-        }
-
-        private async Task DownloadParallel_2_Async()
+        private async Task DownloadParallel_Async()
         {
             List<string> sites = DemoAppMethods.GetUrlWebSites();
             List<Task<WebSiteInfoDataModel>> downloadTasks = new List<Task<WebSiteInfoDataModel>>();

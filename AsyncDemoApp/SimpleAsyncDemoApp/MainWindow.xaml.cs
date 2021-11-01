@@ -20,15 +20,66 @@ namespace SimpleAsyncDemoApp
         }
 
 
-        private void SyncExecute_Click(object sender, RoutedEventArgs e)
-        {
 
+        #region Download Sync
+
+        private void ExecuteSync_Click(object sender, RoutedEventArgs e)
+        {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+
+            DownloadAllSites();
+
+            watch.Stop();
+            var elapsedMs = watch.ElapsedMilliseconds;
+
+            this.ResultTextBlock.Text += $"{ Environment.NewLine }Tempo di esecuzione totale: { elapsedMs } (ms).";
         }
 
-        private void AsyncExecute_Click(object sender, RoutedEventArgs e)
+        private void DownloadAllSites()
         {
+            List<string> sites = DemoAppMethods.GetUrlWebSites();
 
+            this.ResultTextBlock.Text = "";
+
+            foreach (string item in sites)
+            {
+                WebSiteInfoDataModel infoData = DemoAppMethods.DownloadWebSite(item);
+                ShowWebSiteInfoData(infoData);
+            }
         }
+
+        #endregion
+
+
+        #region Download Async
+
+        private async void ExecuteAsync_Click(object sender, RoutedEventArgs e)
+        {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+
+            await DownloadAllSitesAsync();
+
+            watch.Stop();
+            var elapsedMs = watch.ElapsedMilliseconds;
+
+            this.ResultTextBlock.Text += $"{ Environment.NewLine }Tempo di esecuzione totale: { elapsedMs } (ms).";
+        }
+
+        private async Task DownloadAllSitesAsync()
+        {
+            List<string> sites = DemoAppMethods.GetUrlWebSites();
+
+            this.ResultTextBlock.Text = "";
+
+            foreach (string item in sites)
+            {
+                WebSiteInfoDataModel infoData = await DemoAppMethods.DownloadWebSiteAsync(item);
+                ShowWebSiteInfoData(infoData);
+            }
+        }
+
+        #endregion
+
 
         private void ShowWebSiteInfoData(WebSiteInfoDataModel infoData)
         {

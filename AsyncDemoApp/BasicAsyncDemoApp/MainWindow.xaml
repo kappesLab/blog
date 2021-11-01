@@ -20,29 +20,32 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="SyncExecute" 
+            <Button x:Name="ExecuteSync" 
                     Grid.Row="0" Grid.ColumnSpan="2"
                     Margin="10" Padding="0 10" 
                     Content="Esecuzione Normale (Sincrona)" 
-                    Click="SyncExecute_Click"  />
-            
-            <Button x:Name="AsyncExecute" 
-                    Grid.Row="1" Grid.ColumnSpan="2"
-                    Margin="10" Padding="0 10"
-                    Content="Esecuzione Asincrona"
-                    Click="AsyncExecute_Click" />
+                    Click="ExecuteSync_Click"  />
 
-            <Button x:Name="AsyncParallelExecute_1" 
-                    Grid.Row="2" 
+            <Button x:Name="ExecuteAsync_1" 
+                    Grid.Row="1" Grid.Column="0"
                     Margin="10" Padding="0 10"
-                    Content="Esecuzione Asincrona Parallela (1)"
-                    Click="AsyncParallelExecute_1_Click" />
+                    Content="Esecuzione Asincrona (1)"
+                    Click="ExecuteAsync_1_Click" />
 
-            <Button x:Name="AsyncParallelExecute_2" 
-                    Grid.Row="2" Grid.Column="2"
+            <Button x:Name="ExecuteAsync_2" 
+                    Grid.Row="1" Grid.Column="1"
                     Margin="10" Padding="0 10"
-                    Content="Esecuzione Asincrona Parallela (2)"
-                    Click="AsyncParallelExecute_2_Click" />
+                    FontWeight="Bold"
+                    Content="Esecuzione Asincrona (2)"
+                    Click="ExecuteAsync_2_Click" />
+
+
+            <Button x:Name="ParallelExecuteAsync" 
+                    Grid.Row="2" Grid.ColumnSpan="2"
+                    Margin="10" Padding="0 10"
+                    FontWeight="Bold"
+                    Content="Esecuzione Asincrona Parallela"
+                    Click="ParallelExecuteAsync_Click" />
 
             <Border Grid.Row="3" Grid.ColumnSpan="2"
                     BorderThickness="1" BorderBrush="Black" 
