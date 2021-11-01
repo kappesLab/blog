@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{53417499-A045-4FFD-91F5-7FE8033EB989}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>AsyncDemoApp</RootNamespace>
-    <AssemblyName>AsyncDemoApp</AssemblyName>
+    <RootNamespace>BasicAsyncDemoApp</RootNamespace>
+    <AssemblyName>BasicAsyncDemoApp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DemoAppMethods.cs" />
     <Compile Include="WebSiteInfoDataModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

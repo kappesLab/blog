@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3002B7A3-21E8-47D0-8666-2F69EEDD6E33}</ProjectGuid>
+    <ProjectGuid>{7E9E8D6E-296A-4B56-8709-4D9C9ADD8E14}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>AdvancedAsyncDemoApp</RootNamespace>
-    <AssemblyName>AdvancedAsyncDemoApp</AssemblyName>
+    <RootNamespace>SimpleAsyncDemoApp</RootNamespace>
+    <AssemblyName>SimpleAsyncDemoApp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -56,7 +56,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DemoAppMethods.cs" />
-    <Compile Include="ProgressReportModel.cs" />
     <Compile Include="WebSiteInfoDataModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

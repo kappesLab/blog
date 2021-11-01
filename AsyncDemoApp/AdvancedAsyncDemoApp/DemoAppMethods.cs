@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AsyncDemoApp
+namespace AdvancedAsyncDemoApp
 {
     public static class DemoAppMethods
     {
