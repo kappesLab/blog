@@ -28,6 +28,20 @@ namespace AdvancedAsyncDemoApp
             return result;
         }
 
+
+        #region Sync Operation
+
+        private static WebSiteInfoDataModel DownloadWebSite(string urlWebSite)
+        {
+            WebSiteInfoDataModel result = new WebSiteInfoDataModel();
+            WebClient client = new WebClient();
+
+            result.Url = urlWebSite;
+            result.Text = client.DownloadString(urlWebSite);
+
+            return result;
+        }
+
         public static List<WebSiteInfoDataModel> Download()
         {
             List<string> sites = GetUrlWebSites();
@@ -56,6 +70,23 @@ namespace AdvancedAsyncDemoApp
             return results;
         }
 
+        #endregion
+
+
+        #region Async Operation
+
+        private static async Task<WebSiteInfoDataModel> DownloadWebSiteAsync(string urlWebSite)
+        {
+            WebSiteInfoDataModel result = new WebSiteInfoDataModel();
+            WebClient client = new WebClient();
+
+            result.Url = urlWebSite;
+            result.Text = await client.DownloadStringTaskAsync(urlWebSite);
+
+            return result;
+        }
+
+     
         public static async Task<List<WebSiteInfoDataModel>> DownloadAsync(IProgress<ProgressReportModel>progress, CancellationToken cancellationToken)
         {
             List<string> sites = GetUrlWebSites();
@@ -77,6 +108,7 @@ namespace AdvancedAsyncDemoApp
             return results;
         }
 
+
         public static async Task<List<WebSiteInfoDataModel>> DownloadParallelAsync()
         {
             List<string> sites = GetUrlWebSites();
@@ -91,6 +123,7 @@ namespace AdvancedAsyncDemoApp
 
             return new List<WebSiteInfoDataModel>(results);
         }
+
 
         public static async Task<List<WebSiteInfoDataModel>> DownloadParallel_V2_Async(IProgress<ProgressReportModel>progress, CancellationToken cancellationToken)
         {
@@ -119,28 +152,7 @@ namespace AdvancedAsyncDemoApp
             return new List<WebSiteInfoDataModel>(results);
         }
 
-
-        private static WebSiteInfoDataModel DownloadWebSite(string urlWebSite)
-        {
-            WebSiteInfoDataModel result = new WebSiteInfoDataModel();
-            WebClient client = new WebClient();
-
-            result.Url = urlWebSite;
-            result.Text = client.DownloadString(urlWebSite);
-
-            return result;
-        }
-
-        private static async Task<WebSiteInfoDataModel> DownloadWebSiteAsync(string urlWebSite)
-        {
-            WebSiteInfoDataModel result = new WebSiteInfoDataModel();
-            WebClient client = new WebClient();
-
-            result.Url = urlWebSite;
-            result.Text = await client.DownloadStringTaskAsync(urlWebSite);
-
-            return result;
-        }
+        #endregion
 
     }
 }

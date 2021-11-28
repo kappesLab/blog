@@ -20,7 +20,7 @@ namespace AdvancedAsyncDemoApp
             InitializeComponent();
         }
 
-
+        #region Download Sync
         private void ExecuteSync_Click(object sender, RoutedEventArgs e)
         {
             var watch = System.Diagnostics.Stopwatch.StartNew();
@@ -47,6 +47,10 @@ namespace AdvancedAsyncDemoApp
             this.ResultTextBlock.Text += $"{ Environment.NewLine }Tempo di esecuzione totale: { elapsedMs } (ms).";
         }
 
+        #endregion
+
+
+        #region Download Async
         private async void ExecuteAsync_Click(object sender, RoutedEventArgs e)
         {
             Progress<ProgressReportModel> progress = new Progress<ProgressReportModel>();
@@ -75,6 +79,7 @@ namespace AdvancedAsyncDemoApp
 
             this.ResultTextBlock.Text += $"{ Environment.NewLine }Tempo di esecuzione totale: { elapsedMs } (ms).";
         }
+
 
         private async void ParallelExecuteAsync_1_Click(object sender, RoutedEventArgs e)
         {
@@ -118,6 +123,7 @@ namespace AdvancedAsyncDemoApp
             this.ResultTextBlock.Text += $"{ Environment.NewLine }Tempo di esecuzione totale: { elapsedMs } (ms).";
         }
 
+        #endregion
 
 
         private void CancelOperation_Click(object sender, RoutedEventArgs e)
@@ -133,12 +139,12 @@ namespace AdvancedAsyncDemoApp
         }
 
 
-
         private void Progress_ProgressChanged(object sender, ProgressReportModel e)
         {
             this.DownloadProgress.Value = e.PercentageCompleted;
             ShowResults(e.WebSitesDownloaded);
         }
+
 
         private void ShowResults(List<WebSiteInfoDataModel> results)
         {
